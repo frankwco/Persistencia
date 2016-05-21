@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+<!--Nome da unidade de persistencia--> 
+    <persistence-unit name="IntroducaoHibernatePU" transaction-type="RESOURCE_LOCAL">
+    <!--Utilizando o hibernate como framework-->
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <properties>
+        <!--URL do banco de dados-->
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/bancomapeamento?zeroDateTimeBehavior=convertToNull"/>
+      <!--Nome de usuário do banco-->
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <!--Driver do banco-->
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <!--Senha do banco-->
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <!--Configurar para trabalhar com cache ou não-->
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+     
+      <!--<property name="javax.persistence.schema-generation.database.action" value="create"/>-->
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      
+      <!--Formatar a saída do sql-->
+      <property name="hibernate.format_sql" value="true"/>
+      <!--Exibir o sql no console-->
+      <property name="hibernate.show_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
